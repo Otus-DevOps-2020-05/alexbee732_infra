@@ -1,6 +1,5 @@
 #!/bin/bash
-cd ~/
-sudo apt install git
+sudo apt install -y git apt-transport-https
 git clone -b monolith https://github.com/express42/reddit.git
 cd reddit && bundle install
 puma -d
