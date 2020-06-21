@@ -21,5 +21,5 @@ Host bastion
     IdentityFile ~/.ssh/appuser
 
 # Данные для проверки ДЗ №6
-testapp_IP = 84.201.159.109
+testapp_IP = 84.201.133.47
 testapp_port = 9292
