@@ -19,3 +19,7 @@ Host bastion
     HostName 84.201.134.111
     User appuser
     IdentityFile ~/.ssh/appuser
+
+# Данные для проверки ДЗ №6
+testapp_IP = 84.201.133.47
+testapp_port = 9292
