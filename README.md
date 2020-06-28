@@ -23,3 +23,13 @@ Host bastion
 # Данные для проверки ДЗ №6
 testapp_IP = 84.201.133.47
 testapp_port = 9292
+
+# ДЗ №7 Packer
+Сделаны packer скрипты для создания двух видов образов: с установленным окружением и с установленным приложением reddit-app
+См. packer/ubuntu16.json и packer/immutable.json
+Написан скрипт для автоматического создания vm на базе полного образа
+
+Как запустить проект:
+packer build -var-file=variables.json immutable.json
+packer build -var-file=variables.json ubuntu16.json
+. create-reddit-vm.sh
