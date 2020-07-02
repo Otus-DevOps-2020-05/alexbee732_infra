@@ -33,3 +33,8 @@ testapp_port = 9292
 packer build -var-file=variables.json immutable.json
 packer build -var-file=variables.json ubuntu16.json
 . create-reddit-vm.sh
+
+# ДЗ №8 Terraform-1
+Создана конфигурация terraform для запуска 3-х инстансов + балансировщика нагрузки для reddit-app.
+Инфраструктура раскатывается:
+terraform apply

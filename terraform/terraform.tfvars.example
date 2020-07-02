@@ -1,0 +1,8 @@
+cloud_id                 = "blabla"
+folder_id                = "blabla"
+zone                     = "ru-central1-a"
+service_account_key_file = "../secret/key_terraform.json"
+image_id                 = "blabla"
+subnet_id                = "blabla"
+public_key_path          = "~/.ssh/appuser.pub"
+private_key_path         = "~/.ssh/appuser"
