@@ -11,8 +11,13 @@ variable zone {
 variable service_account_key_file {
   description = "terraform service account key .json"
 }
-variable image_id {
-  description = "base image id"
+variable app_disk_image {
+  description = "Disk image for reddit app"
+  default     = "reddit-app-base"
+}
+variable db_disk_image {
+  description = "Disk image for reddit db"
+  default     = "reddit-db-base"
 }
 variable subnet_id {
   description = "subnet id"

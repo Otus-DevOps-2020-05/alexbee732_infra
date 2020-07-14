@@ -2,5 +2,7 @@
     "folder_id": "b1gj34dn2mqtlq1paaaa",
     "source_id": "ubuntu-1604-lts",
     "sa_key_file": "./fake_key.json",
-    "img_name": "reddit-base-{{timestamp}}"
+    "img_name": "reddit-base-{{timestamp}}",
+    "img_db_name": "reddit-db-{{timestamp}}",
+    "img_ruby_name": "reddit-ruby-{{timestamp}}"
 }
