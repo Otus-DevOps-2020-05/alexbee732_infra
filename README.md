@@ -44,3 +44,13 @@ terraform apply
 Созданы 2 окружения stage и prod, использующие модули db и app
 Дла раскатки инфры нужно из соответствующей папки (stage или prod) вызвать terraform apply
 TODO: Выполнить задания со *
+
+# ДЗ №9 Ansible-1
+Созданы inventory файлы в двух форматах с описанием групп хостов и хостов
+Создан файл конфига ansible.cfg чтобы не прописывать конфиг при вызове ansible вручную
+Создан плейбук clone.yml для клонирования git репозитория с помощью модуля git
+Тестовые команды:
+ansible-playbook clone.yml
+ansible db -m systemd -a name=mongod
+ansible all -m ping -i inventory.yml
+TODO: Выполнить задания со *
