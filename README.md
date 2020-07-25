@@ -54,3 +54,17 @@ ansible-playbook clone.yml
 ansible db -m systemd -a name=mongod
 ansible all -m ping -i inventory.yml
 TODO: Выполнить задания со *
+
+# ДЗ №10 Ansible-2
+Создан плейбук reddit_app_one_play.yml, для запуска необходимо явно указывать группу хостов и тэги (один сценарий):
+ansible-playbook reddit_app_one_play.yml --limit app --tags app-tag (неудобно)
+
+Создан плейбук reddit_app_multiple_plays.yml, для запуска необходимо явно указывать только тэги (несколько сценариев):
+ansible-playbook reddit_app_multiple_plays.yml --tags db-tag (удобнее, но можно лучше)
+
+Создана группа плейбуков app.yml, db.yml и deploy.yml, объединенные в плейбуке site.yml, для запуска можно вызвать:
+ansible-playbook site.yml (просто и удобно)
+
+В packer provisioners заменены с shell скриптов на ansible плэйбуки ansible/packer_app.yml и ansible/packer_db.yml
+
+TODO: Выполнить задания со *
