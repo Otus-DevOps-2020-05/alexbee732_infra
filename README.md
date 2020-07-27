@@ -68,3 +68,19 @@ ansible-playbook site.yml (просто и удобно)
 В packer provisioners заменены с shell скриптов на ansible плэйбуки ansible/packer_app.yml и ansible/packer_db.yml
 
 TODO: Выполнить задания со *
+
+# ДЗ №11 Ansible-3
+Создали роли app и db и перенесли туда код из соответствующих плейбуков
+ansible-galaxy init app
+ansible-galaxy init db
+
+Структурировали дерево проекта ansible
+
+Добавили внешнюю роль из ansible-galaxy - jdauphant.nginx
+ansible-galaxy install -r environments/stage/requirements.yml (предварительно прописали там требования)
+
+Создали окружения prod и stage с разными inventory файлами и переменными в папке group_vars. Прописали в ansible.cfg дефолтный inventory из stage. Для вызова продового окружения нужно явно указать инвентори флагом -i:
+ansible-playbook -i environments/prod/inventory playbooks/site.yml
+
+Задействовали хранилище ansible vault с ключем в ~/.ansible/vault.key, прописав в конфиге дефолтный путь до ключа и зашифровав файлы credentials.yml командой
+ansible-vault encrypt environments/prod/credentials.yml
