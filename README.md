@@ -84,3 +84,12 @@ ansible-playbook -i environments/prod/inventory playbooks/site.yml
 
 Задействовали хранилище ansible vault с ключем в ~/.ansible/vault.key, прописав в конфиге дефолтный путь до ключа и зашифровав файлы credentials.yml командой
 ansible-vault encrypt environments/prod/credentials.yml
+
+TODO: Выполнить задания со *
+
+# ДЗ №12 Ansible-4
+Настроен провижининг с помощью Vagrant + VirtualBox
+Роль db протестирована с использованием Molecule и Testinfra -> Vagrant + VirtualBox
+Плейбуки для сборки образов в Packer переключены на использование ролей
+
+TODO: Выполнить второе задание со *
