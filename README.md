@@ -93,3 +93,32 @@ TODO: Выполнить задания со *
 Плейбуки для сборки образов в Packer переключены на использование ролей
 
 TODO: Выполнить второе задание со *
+
+# ДЗ №16 Gitlab-ci
+Создана виртуалка в yc для gitlab-ci
+
+С помощью docker-machine на ней развернут docker:
+docker-machine create --driver generic --generic-ip-address=84.201.132.117 --generic-ssh-user yc-user --generic-ssh-key ~/.ssh/appuser docker-host
+
+С помощью docker-compose развернут gitlab на виртуалке:
+docker-compose up -d
+
+В проект infra добавлен репозиторий gitlab:
+git remote add gitlab http://84.201.132.117/homework/example.git
+
+В корень репы добавлен файл .gitlab-ci.yml с настройками пайплайна
+
+Добавлен и зарегистрирован раннер для работы пайплайна:
+docker run -d --name gitlab-runner --restart always -v /srv/gitlabrunner/config:/etc/gitlab-runner -v /var/run/docker.sock:/var/run/docker.sock gitlab/gitlab-runner:latest
+docker exec -it gitlab-runner gitlab-runner register \
+ --url http://84.201.132.117/ \
+ --non-interactive \
+ --locked=false \
+ --name DockerRunner \
+ --executor docker \
+ --docker-image alpine:latest \
+ --registration-token tsqKxneKFWrzY_SdWQ-z \
+ --tag-list "linux,xenial,ubuntu,docker" \
+ --run-untagged
+
+ Проверена работа пайплайна, добавлены тесты и выкладка на различные окружения, в т.ч. динамические
